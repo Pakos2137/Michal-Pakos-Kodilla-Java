@@ -6,10 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 public class CollectionTestSuite {
-    public static void main(String[] args) {
-        oddNumbersExterminator = new OddNumbersExterminator();
-    }
-    private static OddNumbersExterminator oddNumbersExterminator;
+
+    private OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+
 
     @BeforeEach
     public void before() {
