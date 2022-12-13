@@ -3,7 +3,7 @@ package com.kodilla.stream.forumuser;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MainStream {
+public class MainStreamToForumUser {
     public static void main(String[] args) {
         Forum theForum = new Forum();
 
