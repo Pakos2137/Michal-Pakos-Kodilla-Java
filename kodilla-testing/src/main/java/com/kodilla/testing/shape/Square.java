@@ -5,8 +5,11 @@ import java.util.Objects;
 public class Square implements Shape {
     private final static String name = "Square";
     private double edgeLength;
-
     public void setEdgeLength(double edgeLength) {
+        this.edgeLength = edgeLength;
+    }
+
+    public Square(double edgeLength) {
         this.edgeLength = edgeLength;
     }
 
