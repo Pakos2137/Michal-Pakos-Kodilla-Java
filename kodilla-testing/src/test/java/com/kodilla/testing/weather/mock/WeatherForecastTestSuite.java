@@ -30,6 +30,7 @@ class WeatherForecastTestSuite {
         temperaturesMap.put("Wroclaw", 24.8);
         temperaturesMap.put("Warszawa", 25.2);
         temperaturesMap.put("Gdansk", 26.1);
+
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
@@ -46,9 +47,21 @@ class WeatherForecastTestSuite {
         temperaturesMap.put("Wroclaw", 24.8);
         temperaturesMap.put("Warszawa", 25.2);
         temperaturesMap.put("Gdansk", 26.1);
+
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         AverageTemperature averageTemperature = new AverageTemperature(temperaturesMock);
 
-        Assertions.assertEquals(0,averageTemperature);
+        Assertions.assertEquals(25.56,averageTemperature.averageCalculator());
+    }
+    @Test
+    void medianTemperature() {
+        Map<String, Double> temperaturesMap = new HashMap<>();
+        temperaturesMap.put("Rzeszow", 25.5);
+        temperaturesMap.put("Krakow", 26.2);
+        temperaturesMap.put("Wroclaw", 24.8);
+        temperaturesMap.put("Warszawa", 25.2);
+        temperaturesMap.put("Gdansk", 26.1);
+
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
     }
 }
