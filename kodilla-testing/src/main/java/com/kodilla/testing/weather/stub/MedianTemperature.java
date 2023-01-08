@@ -1,5 +1,6 @@
 package com.kodilla.testing.weather.stub;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.*;
 import java.util.Map;
 
 public class MedianTemperature {
@@ -7,12 +8,21 @@ public class MedianTemperature {
     private Temperatures temperatures;
 
     public MedianTemperature(Temperatures temperatures) {
+
         this.temperatures = temperatures;
     }
-
+    ArrayList<Double> tempList = new ArrayList<>();
     public double medianCalculator() {
-        double median = 0;
+        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
+            tempList.add(temperature.getValue());
+        }
+        Collections.sort(tempList);
+
+        int numberOfMedianValue = tempList.size()/2;
+        double median = (tempList.get(numberOfMedianValue));
         return median;
     }
+
 }
+
 

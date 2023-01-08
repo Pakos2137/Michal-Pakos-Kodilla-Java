@@ -1,6 +1,7 @@
 package com.kodilla.testing.weather.mock;
 
 import com.kodilla.testing.weather.stub.AverageTemperature;
+import com.kodilla.testing.weather.stub.MedianTemperature;
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.jupiter.api.Assertions;
@@ -63,5 +64,10 @@ class WeatherForecastTestSuite {
         temperaturesMap.put("Gdansk", 26.1);
 
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        MedianTemperature medianTemperature = new MedianTemperature(temperaturesMock);
+
+        //System.out.println(medianTemperature.medianCalculator());
+
+        Assertions.assertEquals(25.5,medianTemperature.medianCalculator());
     }
 }

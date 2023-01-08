@@ -1,5 +1,4 @@
 package com.kodilla.testing.weather.stub;
-import java.util.HashMap;
 import java.util.Map;
 
 public class AverageTemperature {
@@ -18,7 +17,7 @@ public class AverageTemperature {
         for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
             totalTemperature += temperature.getValue();
         }
-        double avgTemperature = totalTemperature / 5;
+        double avgTemperature = totalTemperature / temperatures.getTemperatures().size();
         return avgTemperature;
     }
 }
