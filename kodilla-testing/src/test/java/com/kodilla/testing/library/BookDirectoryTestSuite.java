@@ -1,6 +1,6 @@
 package com.kodilla.testing.library;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
@@ -85,5 +84,20 @@ class BookDirectoryTestSuite {
         // Then
         assertEquals(0, theListOfBooks10.size());                                     // [5]
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());    // [6]
+    }
+    @Test void testListBooksInHandsOfZero() {
+        //given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        List<Book> listOfZeroBooks = new ArrayList<>();
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+
+        when(libraryDatabaseMock.listBooksInHandsOf(any(LibraryUser.class))).thenReturn(listOfZeroBooks);
+        //when
+        LibraryUser libraryUser = new LibraryUser("Michal", "Pakos", "12234");
+
+        List<Book> barroweedBookslist = bookLibrary.borrowedBooks(libraryUser);
+
+        assertEquals(0,barroweedBookslist.size());
+
     }
 }
