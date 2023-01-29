@@ -1,23 +1,23 @@
 package com.kodilla.exception.io;
 
-import exception.io.FileReader;
-import exception.io.FileReaderException;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
-public class FileReaderTestSuite {
+class FileReaderTestSuite{
     @Test
     void testReadFile() {
-        FileReader fileReader = new FileReader();
-        assertDoesNotThrow(() -> fileReader.readFile());
-    }
 
+        FileReader fileReader = new FileReader();
+
+        assertDoesNotThrow(() -> fileReader.readFile("names.txt"));
+    }
     @Test
     void whenFileDosentExistsReadFileShouldThrowException() {
-
+        // given
         FileReader fileReader = new FileReader();
         String fileName = "nie_ma_takiego_pliku.txt";
-
-       assertThrows(FileReaderException.class, () -> fileReader.readFile(fileName));
+        // when & then
+        assertThrows(FileReaderException.class, () -> fileReader.readFile(fileName));
     }
     @Test
     public void testReadFileWithName() {
@@ -27,8 +27,7 @@ public class FileReaderTestSuite {
         assertAll(
                 () -> assertThrows(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),
                 () -> assertThrows(FileReaderException.class, () -> fileReader.readFile(null)),
-                () -> assertDoesNotThrow(() -> fileReader.readFile("names.txt")));
+                () -> assertDoesNotThrow(() -> fileReader.readFile("names.txt"))
+        );
     }
 }
-
-
