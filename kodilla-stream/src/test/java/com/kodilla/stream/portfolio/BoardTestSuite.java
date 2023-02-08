@@ -129,6 +129,7 @@ public class BoardTestSuite {
                 .map(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
                 .reduce(0, (sum, current)->sum+=current);
 
-        System.out.println(sumDaysTasks);
+        assertEquals(30,sumDaysTasks);
+
     }
 }

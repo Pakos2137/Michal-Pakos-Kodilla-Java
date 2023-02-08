@@ -11,15 +11,19 @@ public final class TaskList {
     public TaskList(final String name) {
         this.name = name;
     }
+
     public void addTask(Task task) {
         tasks.add(task);
     }
+
     public boolean removeTask(Task task) {
         return tasks.remove(task);
     }
+
     public List<Task> getTasks() {
         return new LinkedList<>(tasks);
     }
+
     public String getName() {
         return name;
     }
@@ -37,6 +41,14 @@ public final class TaskList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaskList taskList = (TaskList) o;
-        return Objects.equals(tasks, taskList.tasks) && Objects.equals(name, taskList.name);
+        return Objects.equals(name, taskList.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
+
+
+
