@@ -3,6 +3,7 @@ package com.kodilla.testing.library;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
@@ -70,7 +71,7 @@ class BookDirectoryTestSuite {
     @Test
     void testListBooksWithConditionFragmentShorterThan3() {
 
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryDatabase libraryDatabaseMock = Mockito.mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
         List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
@@ -80,7 +81,7 @@ class BookDirectoryTestSuite {
     }
     @Test void testListBooksInHandsOfZero() {
 
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryDatabase libraryDatabaseMock = Mockito.mock(LibraryDatabase.class);
         List<Book> listOfZeroBooks = new ArrayList<>();
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
 
@@ -93,7 +94,7 @@ class BookDirectoryTestSuite {
         assertEquals(0,borrowedBookslist.size());
     }
     @Test void testListBooksInHandsOfOne() {
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryDatabase libraryDatabaseMock = Mockito.mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> listOfOneBook = generateListOfNBooks(1);
 
@@ -104,7 +105,7 @@ class BookDirectoryTestSuite {
         assertEquals(1,borrowedBookslist.size());
     }
     @Test void testListBooksInHandsOfFive() {
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryDatabase libraryDatabaseMock = Mockito.mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> listOfFiveBooks = generateListOfNBooks(5);
 

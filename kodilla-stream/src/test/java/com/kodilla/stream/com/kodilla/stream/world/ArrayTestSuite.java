@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import com.kodilla.stream.array.ArrayOperations;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 public class ArrayTestSuite {
     @Test
     public void averageTest() {

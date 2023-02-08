@@ -16,6 +16,7 @@ import static org.mockito.Mockito.when;
 public class ForumStatisticTestSuite {
 
     Calculator calculator;
+
     @Mock
     private Statistics statisticsMock;
 

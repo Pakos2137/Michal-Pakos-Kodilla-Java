@@ -1,6 +1,6 @@
-package com.kodilla.exception.io;
+package com.kodilla.good.patterns.exception.io;
 
-import com.kodilla.exception.test.SecondChallenge;
+import com.kodilla.good.patterns.exception.test.SecondChallenge;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
