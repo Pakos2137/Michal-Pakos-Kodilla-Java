@@ -64,4 +64,12 @@ public class Calculator {
             return 0;
         }
     }
+    public void showStatistics() {
+        System.out.println("Users Quantity: " + usersQty);
+        System.out.println("Post Quantity :" + postQty);
+        System.out.println("Comment Quantity :" + commentQty);
+        System.out.println("Average Comment Per User: " + avgCommentPerUser);
+        System.out.println("Average Comment Per Post : " + avgCommentPerPost);
+        System.out.println("Average Posts Per User: " + avgPostPerUser);
+    }
 }

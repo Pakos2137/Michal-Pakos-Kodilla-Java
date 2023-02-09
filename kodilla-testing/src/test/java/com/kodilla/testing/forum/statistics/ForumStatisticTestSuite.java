@@ -37,6 +37,7 @@ public class ForumStatisticTestSuite {
     public void WhenPostQty0() {
         mockStatistics(0,0,0);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertEquals(0, calculator.getPostQty());
     }
@@ -44,6 +45,7 @@ public class ForumStatisticTestSuite {
     public void WhenPostQty1000() {
         mockStatistics(0,1000,0);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertEquals(1000,calculator.getPostQty());
     }
@@ -51,6 +53,7 @@ public class ForumStatisticTestSuite {
     public void WhenCommentQty0() {
         mockStatistics(0,0,0);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertEquals(0,calculator.getCommentQty());
     }
@@ -58,6 +61,7 @@ public class ForumStatisticTestSuite {
     public void WhenCommentQtySmallerThanPostQty() {
         mockStatistics(0,20,10);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertTrue(calculator.getCommentQty() < calculator.getPostQty());
     }
@@ -65,6 +69,7 @@ public class ForumStatisticTestSuite {
     public void WhenCommentQtyBiggerThanPostQty() {
         mockStatistics(0,10,20);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertTrue(calculator.getCommentQty() > calculator.getPostQty());
     }
@@ -72,6 +77,7 @@ public class ForumStatisticTestSuite {
     public void WhenUsersQty0() {
         mockStatistics(0,0,0);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertEquals(0,calculator.getUsersQty());
     }
@@ -79,6 +85,7 @@ public class ForumStatisticTestSuite {
     public void WhenUsersQty100() {
         mockStatistics(100, 0, 0);
         calculator.calculateAdvStatistics(statisticsMock);
+        calculator.showStatistics();
 
         assertEquals(100, calculator.getUsersQty());
     }
