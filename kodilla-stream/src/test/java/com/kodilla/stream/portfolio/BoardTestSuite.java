@@ -1,5 +1,6 @@
 package com.kodilla.stream.portfolio;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.Period;
@@ -123,13 +124,17 @@ public class BoardTestSuite {
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
 
-        int sumDaysTasks = project.getTaskLists().stream()
+        double AvgDaysTasks = (double) project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
-                .reduce(0, (sum, current)->sum+=current);
+                .mapToDouble(n -> n)
+                .average()
+                .getAsDouble();
 
-        assertEquals(30,sumDaysTasks);
+        Assertions.assertEquals(10,AvgDaysTasks);
+        
+        System.out.println("Average " + AvgDaysTasks + " Days");
 
     }
 }
