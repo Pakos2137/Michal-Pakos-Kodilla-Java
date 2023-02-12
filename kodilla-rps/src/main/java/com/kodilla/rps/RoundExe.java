@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns;
+package com.kodilla.rps;
 
 import java.util.Random;
 
@@ -8,7 +8,6 @@ public class RoundExe {
     Player player;
     public int randomNumber;
     int valueOfChoose;
-
     String nameOfComputerChoose;
     String nameOfPlayerChoose;
 
@@ -61,21 +60,15 @@ public class RoundExe {
     public void gameLogic() {
         //draw
         if (randomNumber == valueOfChoose) {
-            System.out.println("Remis " + player.playerScore + " : " + playerComputer.playerScore);
-            System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+            draw();
         }
         //when player give rock
         if (valueOfChoose == 1) {
             switch (randomNumber) {
                 case 2:
-                    playerComputer.playerScore += 1;
-                    System.out.println("Przegrales " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
-                    break;
+                    lose();
                 case 3:
-                    player.playerScore += 1;
-                    System.out.println("Wygrałes " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+                    win();
                     break;
             }
         }
@@ -83,32 +76,37 @@ public class RoundExe {
         if (valueOfChoose == 2) {
             switch (randomNumber) {
                 case 3:
-                    playerComputer.playerScore += 1;
-                    System.out.println("Przegrales " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+                    lose();
                     break;
                 case 1:
-                    player.playerScore += 1;
-                    System.out.println("Wygrałes " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
-                    break;
+                    win();
             }
         }
         //when player give scissors
         if (valueOfChoose == 3) {
             switch (randomNumber) {
                 case 1:
-                    playerComputer.playerScore += 1;
-                    System.out.println("Przegrales " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+                    lose();
                     break;
                 case 2:
-                    player.playerScore += 1;
-                    System.out.println("Wygrałes " + player.playerScore + " : " + playerComputer.playerScore);
-                    System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+                    win();
                     break;
             }
         }
+    }
+    public void draw() {
+        System.out.println("Remis " + player.playerScore + " : " + playerComputer.playerScore);
+        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+    }
+    public void win() {
+        player.playerScore += 1;
+        System.out.println("Wygrałeś " + player.playerScore + " : " + playerComputer.playerScore);
+        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+    }
+    public void lose() {
+        playerComputer.playerScore += 1;
+        System.out.println("Przegrałeś " + player.playerScore + " : " + playerComputer.playerScore);
+        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
     }
 }
 

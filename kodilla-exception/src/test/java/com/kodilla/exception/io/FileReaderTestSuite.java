@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.exception.io;
+package com.kodilla.exception.io;
 
 import org.junit.jupiter.api.Test;
 

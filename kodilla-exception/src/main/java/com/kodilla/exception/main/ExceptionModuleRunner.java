@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.exception.main;
-import com.kodilla.good.patterns.exception.io.FileReader;
-import com.kodilla.good.patterns.exception.io.FileReaderException;
+package com.kodilla.exception.main;
+import com.kodilla.exception.io.FileReader;
+import com.kodilla.exception.io.FileReaderException;
 
 public class ExceptionModuleRunner {
     public static void main(String[] args) {
