@@ -3,7 +3,7 @@ package com.kodilla.rps;
 import java.util.Objects;
 
 public class PlayerComputer {
-    public String playerName = "Computer";
+    public String playerName = "Komputer";
     public int playerScore;
 
     public String getPlayerName() {

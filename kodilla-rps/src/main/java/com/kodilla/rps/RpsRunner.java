@@ -18,8 +18,12 @@ public class RpsRunner {
             }
             if(player.playerScore > playerComputer.playerScore) {
                 System.out.printf("Gra zakończona Wygrałeś" + '\n');
-            } else {
-                System.out.println("Gra zakończona Przegrałeś" + '\n');
+            }
+            if(player.playerScore < playerComputer.playerScore) {
+                System.out.printf("Gra zakończona Przegrałeś" + '\n');
+            }
+            if(player.playerScore == playerComputer.playerScore) {
+                System.out.printf("Gra zakończona Remis" + '\n');
             }
         }
     }
