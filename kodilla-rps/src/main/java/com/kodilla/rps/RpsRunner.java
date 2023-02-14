@@ -4,6 +4,8 @@ public class RpsRunner {
     static boolean end = false;
     public static void main(String[] args) {
 
+        //pierwsza wersja programu do wstępnego sprawdzenia
+
         while (!end) {
             PlayerComputer playerComputer = new PlayerComputer();
             Player player = new Player();
