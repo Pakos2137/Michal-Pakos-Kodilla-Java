@@ -17,13 +17,13 @@ public class RpsRunner {
                 moveProcess.moveExe(player, playerComputer, firstMenu);
             }
             if(player.playerScore > playerComputer.playerScore) {
-                System.out.printf("Gra zakończona Wygrałeś" + '\n');
+                System.out.println("Gra zakończona Wygrałeś");
             }
             if(player.playerScore < playerComputer.playerScore) {
-                System.out.printf("Gra zakończona Przegrałeś" + '\n');
+                System.out.println("Gra zakończona Przegrałeś");
             }
             if(player.playerScore == playerComputer.playerScore) {
-                System.out.printf("Gra zakończona Remis" + '\n');
+                System.out.println("Gra zakończona Remis");
             }
         }
     }
