@@ -14,7 +14,7 @@ public class RpsRunner {
 
             firstMenu.firstMenuRunner(player);
 
-            while (player.playerScore < firstMenu.roundQty || playerComputer.playerScore < firstMenu.roundQty) {
+            while (player.playerScore <= firstMenu.roundQty && playerComputer.playerScore <= firstMenu.roundQty) {
 
                 moveProcess.moveExe(player, playerComputer, firstMenu);
             }
