@@ -6,10 +6,13 @@ public class RoundExe {
 
     PlayerComputer playerComputer;
     Player player;
-    public int randomNumber;
-    int valueOfChoose;
-    String nameOfComputerChoose;
-    String nameOfPlayerChoose;
+    private int randomNumber;
+    private int valueOfChoose;
+    public int getValueOfChoose() {
+        return valueOfChoose;
+    }
+    private String nameOfComputerChoose;
+    private String nameOfPlayerChoose;
 
     public RoundExe(PlayerComputer playerComputer, Player player) {
         this.playerComputer = playerComputer;
@@ -95,7 +98,7 @@ public class RoundExe {
         }
     }
     public void draw() {
-        System.out.println("Remis " + player.playerScore + " : " + playerComputer.playerScore);
+        System.out.println("Remis " + player.getPlayerName() + " : " + playerComputer.playerScore);
         System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
     }
     public void win() {

@@ -3,8 +3,8 @@ package com.kodilla.rps;
 import java.util.Objects;
 
 public class Player {
-    public String playerName;
-    public int playerScore;
+    String playerName;
+    int playerScore;
 
     public String getPlayerName() {
         return playerName;

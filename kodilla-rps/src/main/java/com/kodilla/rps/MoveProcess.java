@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class MoveProcess {
 
-
     PlayerComputer playerComputer;
     Player player;
     FirstMenu firstMenu;
@@ -23,15 +22,15 @@ public class MoveProcess {
         RoundExe roundExe = new RoundExe(playerComputer, player);
         roundExe.chooseMenu(scanPlayerChoose);
 
-        if((roundExe.valueOfChoose == 2) || (roundExe.valueOfChoose == 1) || (roundExe.valueOfChoose == 3)) {
+        if((roundExe.getValueOfChoose() == 2) || (roundExe.getValueOfChoose() == 1) || (roundExe.getValueOfChoose() == 3)) {
             roundExe.rng();
             roundExe.numberToWord();
             roundExe.gameLogic();
         }
-        if (roundExe.valueOfChoose == 4) {
+        if (roundExe.getValueOfChoose() == 4) {
             reset();
         }
-        if (roundExe.valueOfChoose == 5) {
+        if (roundExe.getValueOfChoose() == 5) {
             endGame();
         }
     }
