@@ -6,10 +6,10 @@ public class Player {
     String playerName;
     int playerScore;
 
+
     public String getPlayerName() {
         return playerName;
     }
-
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
@@ -17,7 +17,6 @@ public class Player {
     public int getPlayerScore() {
         return playerScore;
     }
-
     public void setPlayerScore(int playerScore) {
         this.playerScore = playerScore;
     }
