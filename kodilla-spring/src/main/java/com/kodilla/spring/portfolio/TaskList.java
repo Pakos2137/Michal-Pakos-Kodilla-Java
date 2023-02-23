@@ -6,8 +6,6 @@ import java.util.List;
 public class TaskList {
     List<String> tasks;
 
-
-
     public List<String> getTasks() {
         return tasks;
     }
