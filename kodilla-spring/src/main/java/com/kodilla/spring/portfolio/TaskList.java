@@ -9,7 +9,7 @@ public class TaskList {
     public List<String> getTasks() {
         return tasks;
     }
-    public void setTasks(List<String> tasks) {
-        this.tasks = new ArrayList<>();
-    }
+   TaskList() {
+        tasks = new ArrayList<>();
+   }
 }

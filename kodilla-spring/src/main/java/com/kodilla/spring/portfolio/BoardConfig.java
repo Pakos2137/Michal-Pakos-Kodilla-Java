@@ -2,6 +2,7 @@ package com.kodilla.spring.portfolio;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class BoardConfig {
@@ -13,15 +14,18 @@ public class BoardConfig {
     Board crateBoard() {
         return new Board(createToDoList(), createInProgressList(), createDoneList());
     }
-    @Bean
+    @Bean(name = "taskToDo")
+    @Scope("prototype")
     TaskList createToDoList() {
         return new TaskList();
     }
-    @Bean
+    @Bean(name = "taskInProgress")
+    @Scope("prototype")
     TaskList createInProgressList() {
         return new TaskList();
     }
-    @Bean
+    @Bean(name = "taskDone")
+    @Scope("prototype")
     TaskList createDoneList() {
         return new TaskList();
     }

@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class BoardTestSuite {
@@ -21,10 +18,17 @@ public class BoardTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext(BoardConfig.class);
         Board board = context.getBean(Board.class);
 
-        List<String> toDoTaskList = new ArrayList<>();
+        board.getToDoList().getTasks().add("Task To Do");
+        System.out.println(board.getToDoList().getTasks());
 
-        board.getToDoList().getTasks().add("TaskToDo");
+        board.getInProgressList().getTasks().add("In Progress Task");
+        System.out.println(board.getInProgressList().getTasks());
 
-        System.out.println(toDoTaskList);
+        board.getDoneList().getTasks().add("Done Tasks");
+        System.out.println(board.getDoneList().getTasks());
+
+        assertEquals("Task To Do",board.getToDoList().getTasks());
+        assertEquals("In Progress Task",board.getInProgressList().getTasks());
+        assertEquals("Done Tasks",board.getDoneList().getTasks());
     }
 }
