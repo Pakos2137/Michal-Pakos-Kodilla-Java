@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class FirstMenu {
     public int roundQty;
     Player player;
-    PlayerComputer playerComputer;
 
     public void firstMenuRunner(Player player) {
         this.player = player;
@@ -14,13 +13,13 @@ public class FirstMenu {
         System.out.println("Podaj swoje imię: ");
 
         Scanner scanName = new Scanner(System.in);
-        player.playerName = scanName.nextLine();
+        player.setPlayerName(scanName.nextLine());
 
         System.out.println("Podaj liczbę rund do rozegrania:");
         Scanner scanRoundQty = new Scanner(System.in);
         roundQty = scanRoundQty.nextInt();
 
-        System.out.println("Imię: " + player.playerName + '\n' + "Ilość rund: " + roundQty);
+        System.out.println("Imię: " + player.getPlayerName() + '\n' + "Ilość rund: " + roundQty);
         System.out.printf(
                 "1 - kamień " + '\n' +
                         "2 - papier " + '\n' +

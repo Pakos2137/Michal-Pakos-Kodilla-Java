@@ -12,17 +12,17 @@ public class RpsRunner {
 
             firstMenu.firstMenuRunner(player);
 
-            while (player.playerScore <= firstMenu.roundQty && playerComputer.playerScore <= firstMenu.roundQty) {
+            while (player.getPlayerScore() <= firstMenu.roundQty && playerComputer.playerScore <= firstMenu.roundQty) {
 
                 moveProcess.moveExe(player, playerComputer, firstMenu);
             }
-            if(player.playerScore > playerComputer.playerScore) {
+            if(player.getPlayerScore() > playerComputer.playerScore) {
                 System.out.println("Gra zakończona Wygrałeś");
             }
-            if(player.playerScore < playerComputer.playerScore) {
+            if(player.getPlayerScore() < playerComputer.playerScore) {
                 System.out.println("Gra zakończona Przegrałeś");
             }
-            if(player.playerScore == playerComputer.playerScore) {
+            if(player.getPlayerScore() == playerComputer.playerScore) {
                 System.out.println("Gra zakończona Remis");
             }
         }

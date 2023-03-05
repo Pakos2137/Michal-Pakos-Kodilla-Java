@@ -99,17 +99,17 @@ public class RoundExe {
     }
     public void draw() {
         System.out.println("Remis " + player.getPlayerName() + " : " + playerComputer.playerScore);
-        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+        System.out.println(player.getPlayerName() + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
     }
     public void win() {
-        player.playerScore += 1;
-        System.out.println("Wygrałeś " + player.playerScore + " : " + playerComputer.playerScore);
-        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+        player.setPlayerScore(player.getPlayerScore() + 1);
+        System.out.println("Wygrałeś " + player.getPlayerScore() + " : " + playerComputer.playerScore);
+        System.out.println(player.getPlayerName() + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
     }
     public void lose() {
         playerComputer.playerScore += 1;
-        System.out.println("Przegrałeś " + player.playerScore + " : " + playerComputer.playerScore);
-        System.out.println(player.playerName + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
+        System.out.println("Przegrałeś " + player.getPlayerScore() + " : " + playerComputer.playerScore);
+        System.out.println(player.getPlayerName() + ":" + nameOfPlayerChoose + " " + playerComputer.playerName + ":" + nameOfComputerChoose);
     }
 }
 
