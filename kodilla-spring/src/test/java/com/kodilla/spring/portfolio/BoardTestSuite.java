@@ -27,8 +27,8 @@ public class BoardTestSuite {
         board.getDoneList().getTasks().add("Done Tasks");
         System.out.println(board.getDoneList().getTasks());
 
-        assertEquals("Task To Do",board.getToDoList().getTasks());
-        assertEquals("In Progress Task",board.getInProgressList().getTasks());
-        assertEquals("Done Tasks",board.getDoneList().getTasks());
+        assertEquals("Task To Do",board.getToDoList().getTasks().get(0));
+        assertEquals("In Progress Task",board.getInProgressList().getTasks().get(0));
+        assertEquals("Done Tasks",board.getDoneList().getTasks().get(0));
     }
 }

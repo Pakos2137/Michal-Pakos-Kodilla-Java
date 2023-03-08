@@ -1,4 +1,4 @@
-package com.kodilla.patterns.builder.bigmac;
+/*package com.kodilla.patterns.builder.bigmac;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,3 +23,5 @@ public final class Bigmac {
 
     }
 }
+
+ */
