@@ -1,6 +1,6 @@
 
 
-public class RentalProcessor {
+/*public class RentalProcessor {
 
     private InformationService informationService;
     private RentalService rentalService;
@@ -27,3 +27,4 @@ public class RentalProcessor {
         }
     }
 }
+ */

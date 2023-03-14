@@ -1,0 +1,3 @@
+SELECT SUMMARY , NAME FROM issues join issueslists i on i.ID = issues.ISSUESLIST_ID;
+SELECT SUMMARY , FIRSTNAME , LASTNAME FROM issues join users u on u.ID = issues.USER_ID_ASSIGNEDTO;
+SELECT FIRSTNAME , LASTNAME , COUNT(SUMMARY) FROM issues join users u on u.ID = issues.USER_ID_ASSIGNEDTO group by FIRSTNAME, LASTNAME ;
