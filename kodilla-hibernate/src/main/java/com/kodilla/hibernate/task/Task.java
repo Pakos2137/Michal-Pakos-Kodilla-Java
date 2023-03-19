@@ -1,6 +1,5 @@
 package com.kodilla.hibernate.task;
 
-
 import jakarta.validation.constraints.NotNull;
 
 import javax.persistence.*;
