@@ -1,10 +1,12 @@
 package com.kodilla.hibernate.invoice;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+
 @Entity
-@Table(name = "Items")
+@Table(name = "ITEMS")
 public class Item {
     private int id;
     private Product product;
@@ -58,13 +60,6 @@ public class Item {
     }
     public void setId(int id) {
         this.id = id;
-    }
-    @ManyToOne(
-            cascade = CascadeType.ALL
-    )
-    @JoinColumn(name = "INVOICE_ID")
-    public Invoice getInvoice() {
-        return invoice;
     }
 
     public void setInvoice(Invoice invoice) {

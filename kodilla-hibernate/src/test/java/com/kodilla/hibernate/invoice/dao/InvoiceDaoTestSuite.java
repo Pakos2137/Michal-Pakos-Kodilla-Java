@@ -18,6 +18,7 @@ public class InvoiceDaoTestSuite {
 
     @Test
     public void testInvoiceDaoSave() {
+
         Invoice invoice = new Invoice("1");
         Product product1 = new Product("Product1");
         Product product2 = new Product("Product2");
