@@ -9,42 +9,64 @@ import java.math.BigDecimal;
 @Table(name = "ITEMS")
 public class Item {
     private int id;
-    private Product product;
     private BigDecimal price;
     private int quantity;
     private BigDecimal value;
+    private Product product;
     private Invoice invoice;
+
     public Item() {
     }
 
-    public Item(Product product, BigDecimal price, int quantity, BigDecimal value) {
-        this.product = product;
+    public Item(BigDecimal price, int quantity) {
         this.price = price;
         this.quantity = quantity;
-        this.value = value;
+        value = price.multiply(BigDecimal.valueOf(quantity));
     }
+
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "ITEM_ID" , unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
-    @NotNull
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
     }
-    @NotNull
+
     @Column(name = "QUANTITY")
     public int getQuantity() {
         return quantity;
     }
-    @NotNull
+
     @Column(name = "VALUE")
-    private BigDecimal getValue() {
+    public BigDecimal getValue() {
         return value;
+    }
+
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name = "PRODUCT_ID")
+    public Product getProduct() {
+        return product;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "INVOICE_ID")
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public void setPrice(BigDecimal price) {
@@ -58,15 +80,9 @@ public class Item {
     public void setValue(BigDecimal value) {
         this.value = value;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }
+

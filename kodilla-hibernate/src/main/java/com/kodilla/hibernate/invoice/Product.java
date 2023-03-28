@@ -22,23 +22,24 @@ public class Product {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "PRODUCT_ID", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
-    }
-
-    @NotNull
-    @Column(name ="PRODUCT")
-    public String getName() {
-        return name;
     }
 
     public void setId(int id) {
         this.id = id;
     }
+
+    @Column(name = "NAME")
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
+
     @OneToMany(
             targetEntity = Item.class,
             mappedBy = "product",
@@ -48,8 +49,8 @@ public class Product {
     public List<Item> getItems() {
         return items;
     }
+
     public void setItems(List<Item> items) {
         this.items = items;
     }
-
 }

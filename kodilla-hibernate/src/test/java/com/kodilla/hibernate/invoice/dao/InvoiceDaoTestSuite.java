@@ -23,8 +23,8 @@ public class InvoiceDaoTestSuite {
         Product product1 = new Product("Product1");
         Product product2 = new Product("Product2");
 
-        Item item1 = new Item(product1,new BigDecimal(100),10,new BigDecimal(20));
-        Item item2 = new Item(product1,new BigDecimal(150),30,new BigDecimal(50));
+        Item item1 = new Item(new BigDecimal(2000),50);
+        Item item2 = new Item(new BigDecimal(5000),15);
 
         item1.setProduct(product1);
         item2.setProduct(product2);
