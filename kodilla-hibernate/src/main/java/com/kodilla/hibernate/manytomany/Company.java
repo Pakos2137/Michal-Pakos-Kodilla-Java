@@ -5,6 +5,15 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.findPartialCompanyName",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :seekString",
+        resultClass = Company.class
+)
+@NamedQuery(
+        name = "Company.findByCompaniesContainingName",
+        query = "FROM Company WHERE name LIKE CONCAT('%', :PART_OF_NAME,'%')"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

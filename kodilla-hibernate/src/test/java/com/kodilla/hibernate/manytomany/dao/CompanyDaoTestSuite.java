@@ -6,13 +6,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
 class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -59,4 +64,23 @@ class CompanyDaoTestSuite {
             //do nothing
         }
     }
+
+    @Test
+    void EmployeeDaoTestSuite() {
+
+
+        Employee michalPakos = new Employee("Michal","Pakos");
+
+        employeeDao.save(michalPakos);
+
+        List<Employee> employees = employeeDao.retrieveEmployeesWithName("Pakos");
+
+        assertEquals(1,employees.size());
+
+        employeeDao.deleteById(michalPakos.getId());
+
+
+    }
+
+
 }
