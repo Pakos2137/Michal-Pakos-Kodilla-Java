@@ -16,7 +16,7 @@ class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
-
+    @Autowired
     private EmployeeDao employeeDao;
 
     @Test
@@ -66,8 +66,7 @@ class CompanyDaoTestSuite {
     }
 
     @Test
-    void EmployeeDaoTestSuite() {
-
+    void employeeDaoTestSuite() {
 
         Employee michalPakos = new Employee("Michal","Pakos");
 
@@ -79,8 +78,17 @@ class CompanyDaoTestSuite {
 
         employeeDao.deleteById(michalPakos.getId());
 
-
     }
+    @Test
+    void companyNameTestSuite() {
+        Company google = new Company("Google");
 
+        companyDao.save(google);
 
+        List<Company> threeFirstLetters = companyDao.findByCompaniesContainingName("Goo");
+
+        assertEquals(1,threeFirstLetters.size());
+
+        companyDao.deleteById(google.getId());
+    }
 }
