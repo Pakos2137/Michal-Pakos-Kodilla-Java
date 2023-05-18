@@ -42,7 +42,7 @@ public class MoveProcess {
 
         switch (resetChoose) {
             case "t":
-                firstMenu.roundQty = -1;
+                firstMenu.roundQty = 0;
                 System.out.println("Resetowanie gry...");
                 break;
             case "n":
@@ -60,7 +60,7 @@ public class MoveProcess {
 
         switch (endChoose) {
             case "t":
-                firstMenu.roundQty = -1;
+                firstMenu.roundQty = 0;
                 RpsRunner rpsRunner = new RpsRunner();
                 rpsRunner.end = true;
                 System.out.println("Kończenie gry...");;
