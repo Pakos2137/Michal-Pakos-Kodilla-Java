@@ -10,10 +10,18 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :seekString",
         resultClass = Company.class
 )
-@NamedQuery(
-        name = "Company.findByCompaniesContainingName",
-        query = "FROM Company WHERE name LIKE CONCAT('%', :PART_OF_NAME,'%')"
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.findCompanyByThreeFirstLetter",
+                query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :NAME",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.findCompanyByNameFragment",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT ('%', :FRAGMENT, '%')",
+                resultClass = Company.class
+        )
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
